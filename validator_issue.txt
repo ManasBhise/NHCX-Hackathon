@@ -1,0 +1,41 @@
+These are ALL GENERATED/CALCULATED ✅
+Here's where each value comes from:
+
+Response Values (from your attachment):
+
+How They're Calculated:
+- total_checks = self.checks_performed (incremented during validation)
+- passed_checks = self.checks_passed (incremented when check passes)
+- failed_checks = total_checks - passed_checks
+- completion_percentage = (checks_passed / checks_performed) × 100
+  In your case: (22 ÷ 26) × 100 = 84.62% ✓
+- compliance_percentage = 100 - (error_count × 5) (from config)
+  In your case: 100 - (1 × 5) = 95% ✓
+- error_count = Count of actual errors found
+- warning_count = Count of actual warnings found
+
+Where Calculated:
+enhanced_validator.py:164-176:
+
+Each Error Penalty is Configurable ⚙️
+
+{
+  "valid_percentage": 84.62,          // ← Generated
+  "compliance_percentage": 95,        // ← Generated  
+  "total_checks": 26,                 // ← Generated
+  "passed_checks": 22,                // ← Generated
+  "failed_checks": 4,                 // ← Generated
+  "error_count": 1,                   // ← Generated
+  "warning_count": 2                  // ← Generated
+}
+
+In config/validation_rules.yaml:
+
+
+In your case:
+
+Error penalty = 5 points per error
+Your bundle had 1 error
+Compliance = 100 - (1 × 5) = 95% ✓
+
+All values are dynamic & generated from actual validation results, nothing is hardcoded
